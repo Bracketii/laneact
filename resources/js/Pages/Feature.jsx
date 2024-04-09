@@ -10,7 +10,7 @@ export default function Welcome({ auth }) {
             <div>
                 <div className="min-h-screen flex flex-col">
                     <Header auth={auth} />
-                    {/* Other content */}
+                    <h1>Feature</h1>
                 </div>
             </div>
         </>
