@@ -17,6 +17,8 @@ export default {
             },
             colors: {
                 // Define your custom colors
+                primary: '#FEE715',
+                primary_hover: '#F4DB01',
                 customBlue: '#2E3192',
                 lightBlue: '#0162F9',
                 veryLightBlue: '#EBF2FF',
