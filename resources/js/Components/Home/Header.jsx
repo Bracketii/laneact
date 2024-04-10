@@ -39,7 +39,7 @@ export default function Header({ auth, toggleTheme, darkTheme }) {
             <div className="hidden md:flex items-center gap-4">
                 <ThemeSwitcher iconClassName="size-6" />
                 {auth.user ? (
-                    <Link href={route('dashboard')} className="px-4 py-2 text-base font-medium rounded-md text-white bg-[#FF2D20] hover:bg-[#FF5733]">
+                    <Link href={route('dashboard')} className="px-4 py-2 text-base font-medium rounded-md text-dark bg-[#FEE715] hover:bg-[#F4DB01]">
                         Dashboard
                     </Link>
                 ) : (
