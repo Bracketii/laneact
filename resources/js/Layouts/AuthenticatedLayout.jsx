@@ -2,11 +2,11 @@ import Footer from '@/Components/Dashboard/Footer';
 import Header from '@/Components/Dashboard/Header';
 import Sidebar from '@/Components/Dashboard/Sidebar';
 
-export default function Authenticated({ children }) {
+export default function Authenticated({ user, children }) {
 
     return (
         <>
-            <Header />
+            <Header user={user} />
             <Sidebar />
             {/* Main Section */}
             <div className="w-full pt-10 px-4 sm:px-6 md:px-8 lg:ps-72 min-h-screen bg-gray-50 dark:bg-gray-900">

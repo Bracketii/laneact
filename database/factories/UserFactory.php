@@ -27,9 +27,31 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => static::$password ??= Hash::make('password'), // Using 'password' as the default password
             'remember_token' => Str::random(10),
+            // Assume default role is 'client' if not specified
+            'role' => 'client', 
         ];
+    }
+
+    /**
+     * State indicating the user is an employee.
+     */
+    public function employee(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'employee',
+        ]);
+    }
+
+    /**
+     * State indicating the user is a client.
+     */
+    public function client(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'client',
+        ]);
     }
 
     /**

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
+use App\Models\User;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -15,12 +16,19 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard', [
+        'user' => auth()->user(),
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/features', function () {
     return Inertia::render('Feature');
 })->name('features');
+
+Route::get('/users', function () {
+    $users = User::all(); // Consider using pagination for large datasets
+    return Inertia::render('Admin/Users', ['users' => $users]);
+})->middleware(['auth', 'verified'])->name('users');
 
 
 Route::middleware('auth')->group(function () {

@@ -1,11 +1,18 @@
 export default function Footer() {
     return (
-            <div className="fixed bottom-0  dark:bg-gray-800 bg-gray-100 lg:pl-72 sm:p-2">
-                <div className="mx-auto sm:px-6 lg:px-2 w-screen">
-                    <div className="overflow-hidden p-1">
-                    <p className="text-sm text-gray-200 dark:text-gray-100">&copy; 2024 Bracketi Solutions. All rights reserved.</p>
-                    </div>
+        <footer className="dark:bg-gray-800 bg-gray-50 text-white py-2 px-2 sm:px-2 md:px-2">
+            <div className="w-full flex justify-end items-end">
+                {/* Left section */}
+                <div>
+                    <p className="text-xs text-gray-800 dark:text-gray-200">&copy; 2024 Bracketi Solutions. All rights reserved.</p>
+                </div>
+                {/* Right section */}
+                <div>
+                    <nav className="flex gap-4">
+                        {/*  */}
+                    </nav>
                 </div>
             </div>
+        </footer>
     );
 }

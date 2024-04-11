@@ -4,7 +4,7 @@ import ThemeSwitcher from '../ThemeSwitcher';
 import { useState, useEffect, useRef } from 'react';
 import NavLink from '../NavLink';
 
-export default function Header(){
+export default function Header({user}){
 
     // State variable to manage mobile menu visibility
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -150,7 +150,12 @@ export default function Header(){
                         alt="User profile"
                     />
                 </Dropdown.Trigger>
-                <Dropdown.Content align="right" width="48" contentClasses="py-1 bg-white shadow-md rounded-lg dark:bg-gray-700">
+                <Dropdown.Content align="right" width="48" contentClasses="pb-1 bg-white shadow-md rounded-lg dark:bg-gray-700">
+                <div class="py-2 px-4 bg-gray-100 rounded-t-lg dark:bg-gray-700">
+                  <p class="text-sm font-medium text-gray-800 dark:text-gray-300">{user.name} <span class="inline-flex items-center gap-x-1.5 py-1 px-2 rounded-full text-xs font-medium bg-gray-500 text-white">{user.role}</span></p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">{user.email}</p>
+                </div>
+                <hr className='dark:border-gray-800 border-gray-100' />
                 <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
                 <Dropdown.Link href={route('logout')} method="post" as="button">
                     Log Out

@@ -7,3 +7,23 @@
     --tw-bg-opacity: 1;
     background-color: #101820;
 }
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #111827;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1F2937;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #151c27;
+  }
+  
+  
