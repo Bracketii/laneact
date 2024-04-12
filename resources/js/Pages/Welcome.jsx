@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/react';
 import { useState } from 'react';
 import Header from '@/Components/Home/Header'; // Adjust the import path as needed
+import Hero from '@/Components/Home/Hero';
 
 export default function Welcome({ auth }) {
     return (
@@ -10,7 +11,7 @@ export default function Welcome({ auth }) {
             <div>
                 <div className="min-h-screen flex flex-col">
                     <Header auth={auth} />
-                    {/* Other content */}
+                    <Hero />
                 </div>
             </div>
         </>
